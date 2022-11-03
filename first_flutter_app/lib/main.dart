@@ -7,6 +7,7 @@ void main() {
 class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
+    print('createState');
     return _MyApp();
   }
 }
@@ -20,6 +21,7 @@ class _MyApp extends State<MyApp> {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    print('build');
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -59,6 +61,18 @@ class _MyApp extends State<MyApp> {
             },) ),
       )
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    print('initState');
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    print('didChangeDependencies');
   }
 }
 
